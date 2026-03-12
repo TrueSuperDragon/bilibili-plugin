@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bilibili 下载助手(V1.0.0)</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-text">
+      <div class="title">Bilibili 下载助手</div>
+      <div id="pageTitle" class="subtitle">暂无缓存</div>
+    </div>
+    <button id="fetchBtn" class="primary">获取链接</button>
+  </header>
+
+  <div class="status">
+    <span id="status" class="status-text">就绪</span>
+  </div>
+  <!-- <div class="status">
+      <span id="contactInfo" class="status-text">我才不会告诉你激活码是暴龙战士真厉害</span>
+    </div> -->
+
+  <section id="mergeProgressSection" class="section hidden">
+    <div class="section-title">合并进度</div>
+    <div id="mergeProgressText" class="progress-text">等待开始...</div>
+    <div class="progress-track">
+      <div id="mergeProgressBar" class="progress-bar"></div>
+    </div>
+    <div id="mergeProgressPercent" class="progress-percent">0%</div>
+  </section>
+
+  <section id="videoSection" class="section hidden">
+    <div id="videoTitle" class="section-title">视频</div>
+    <div id="videoList" class="list"></div>
+  </section>
+
+  <section id="audioSection" class="section hidden">
+    <div id="audioTitle" class="section-title">音频</div>
+    <div id="audioList" class="list"></div>
+  </section>
+
+  <section id="otherSection" class="section hidden">
+    <div id="otherTitle" class="section-title">其他</div>
+    <div id="otherList" class="list"></div>
+  </section>
+
+  <div class="actions">
+    <button id="mergeBestBtn" class="primary hidden">合并最佳音视频</button>
+    <button id="copyAllBtn" class="ghost">复制全部链接</button>
+  </div>
+
+  <div class="note">
+    说明：Bilibili 通常是音视频分离。如果在线合并失败，可先分别下载再用本地 ffmpeg 合并。
+  </div>
+
+  <div id="inviteGate" class="invite-gate hidden">
+    <div class="invite-card">
+      <div class="invite-title">请输入激活码</div>
+      <div class="invite-desc">你要输入邀请码后才能解锁该功能 🤪🤪🤪</div>
+      <input id="inviteInput" class="invite-input" type="text" placeholder="请输入邀请码" autocomplete="off" />
+      <button id="inviteSubmitBtn" class="primary invite-btn">验证并解锁</button>
+      <div id="inviteHint" class="invite-hint">提示：邀请码区分大小写与空格。</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
